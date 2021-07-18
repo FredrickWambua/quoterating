@@ -9,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
 export class QuoteComponent implements OnInit {
 
   quotes:Quote[] = [
-    
+    new Quote (1, 'Fred', 'Live as if you were to die tomorrow. Learn as if you were to live forever.', 'Mahatma Gandhi', new Date (2021,7,16)),
+    new Quote (2, 'Fred', 'Live as if you were to die tomorrow. Learn as if you were to live forever.', 'Mahatma Gandhi', new Date (2021,7,16)),
+    new Quote (3, 'Fred', 'Live as if you were to die tomorrow. Learn as if you were to live forever.', 'Mahatma Gandhi', new Date (2021,7,16)),
+    new Quote (4, 'Fred', 'Live as if you were to die tomorrow. Learn as if you were to live forever.', 'Mahatma Gandhi', new Date (2021,7,16)),
+    new Quote (5, 'Fred', 'Live as if you were to die tomorrow. Learn as if you were to live forever.', 'Mahatma Gandhi', new Date (2021,7,16)),
+    new Quote (6, 'Fred', 'Live as if you were to die tomorrow. Learn as if you were to live forever.', 'Mahatma Gandhi', new Date (2021,7,16))
   ];
 
+  get sortQuotes(){
+    return this.quotes.sort((a,b) =>{
+      return <any>new Date(b.datePosted) - <any>new Date(a.datePosted);
+    });
+  }
+
   constructor() { }
+
+  }
 
   ngOnInit(): void {
   }

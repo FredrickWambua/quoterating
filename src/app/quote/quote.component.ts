@@ -28,6 +28,18 @@ export class QuoteComponent implements OnInit {
     quote.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote)
   }
+  quoteDelete(isRead, index){
+    if(isRead){
+      let toDelete = confirm('Confirm to delete this quote')
+      if(toDelete){
+        this.quotes.splice(index,1);
+      }
+    }
+  }
+
+  displayInfo (index){
+    this.quotes[index].showInfo = !this.quotes[index].showInfo;
+  }
 
   constructor() { }
 
